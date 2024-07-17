@@ -1,16 +1,35 @@
-
 public class Main {
     public static void main(String[] args) {
-        BonusService bonusService = new BonusService();
 
-        int expected = 150;
-        int actual = bonusService.calcBonus(5_000, true);
-        System.out.println("1. " + expected + "== ? == " + actual);
+        BonusService service = new BonusService();
+
+        long amount = 1000;
+        boolean registered = true;
+        long actual = service.calcBonus(amount, registered);
+        System.out.println("Bonus calculated: " + actual);
 
 
-        expected = 50;
-        actual = bonusService.calcBonus(5_000, false);
-        System.out.println("2, " + expected + "== ? == " + actual);
+        amount = 2000;
+        registered = false;
+        actual = service.calcBonus(amount, registered);
+        System.out.println("Bonus calculated: " + actual);
+
+
+        amount = 10000;
+        registered = true;
+        actual = service.calcBonus(amount, registered);
+        System.out.println("Bonus calculated: " + actual);
+        System.out.println("1. " + registered + "== ? == " + actual);
+
+        amount = 5000;
+        registered = false;
+        actual = service.calcBonus(amount, registered);
+        System.out.println("2. " + registered + "== ? == " + actual);
 
     }
+
 }
+
+
+
+
