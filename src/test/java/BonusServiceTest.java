@@ -12,10 +12,6 @@ public class BonusServiceTest {
         long actual = service.calcBonus(amount, registered);
         System.out.println("Bonus calculated: " + actual);
 
-        amount = 2000;
-        registered = false;
-        actual = service.calcBonus(amount, registered);
-        System.out.println("Bonus calculated: " + actual);
 
         amount = 10000;
         registered = true;
@@ -30,4 +26,44 @@ public class BonusServiceTest {
 
     }
 
+    @Test
+    public void testUnregisteredUnderLimit() {
+        BonusService service = new BonusService();
+        long amount = 2000;
+        boolean registered = false;
+        long actual = service.calcBonus(amount, registered);
+        System.out.println("Bonus calculated: " + actual);
+
+    }
+
+    @Test
+
+
+    public void shouldCalculateForRegisteredAndOverLimit() {
+        BonusService service = new BonusService();
+        long amount = 10000;
+        boolean registered = true;
+        long actual = service.calcBonus(amount, registered);
+        System.out.println("Bonus calculated: " + actual);
+
+    }
+
+    @Test
+    public void shouldCalculateForOverLimit() {
+        BonusService service = new BonusService();
+        long amount = 1000;
+        boolean registered = false;
+        long actual = service.calcBonus(amount, registered);
+        System.out.println("Bonus calculated: " + actual);
+    }
+
+
 }
+
+
+
+
+
+
+
+

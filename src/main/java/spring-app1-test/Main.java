@@ -19,12 +19,11 @@ public class Main {
         registered = true;
         actual = service.calcBonus(amount, registered);
         System.out.println("Bonus calculated: " + actual);
-        System.out.println("1. " + registered + "== ? == " + actual);
 
-        amount = 5000;
+        amount = 1000;
         registered = false;
         actual = service.calcBonus(amount, registered);
-        System.out.println("2. " + registered + "== ? == " + actual);
+        System.out.println("Bonus calculated: " + actual);
 
     }
 
